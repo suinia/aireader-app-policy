@@ -5,41 +5,73 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Legal - getdigest</title>
     <style>
+        :root {
+            --primary-color: #007AFF;
+            --text-color: #333;
+            --bg-color: #f5f5f7;
+        }
         body {
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
             line-height: 1.6;
-            color: #333;
+            color: var(--text-color);
             max-width: 800px;
             margin: 0 auto;
             padding: 20px;
+            background-color: var(--bg-color);
+        }
+        .container {
+            background: #fff;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
         }
         nav {
-            margin-bottom: 20px;
-            padding-bottom: 10px;
+            margin-bottom: 30px;
+            padding-bottom: 15px;
             border-bottom: 1px solid #eee;
+            display: flex;
+            gap: 20px;
         }
         nav a {
-            margin-right: 15px;
             text-decoration: none;
-            color: #007AFF;
-            font-weight: bold;
+            color: var(--primary-color);
+            font-weight: 600;
             cursor: pointer;
-            opacity: 0.6;
+            padding: 5px 0;
+            transition: all 0.3s;
+            border-bottom: 2px solid transparent;
         }
+        nav a:hover { opacity: 0.8; }
         nav a.active {
-            opacity: 1;
-            border-bottom: 2px solid #007AFF;
+            border-bottom: 2px solid var(--primary-color);
         }
         section { display: none; }
         section.active { display: block; }
-        h1 { border-bottom: 2px solid #eee; padding-bottom: 10px; }
-        h2 { margin-top: 30px; color: #000; }
-        .footer { margin-top: 50px; font-size: 0.9em; color: #666; border-top: 1px solid #eee; padding-top: 20px; }
+        h1 { font-size: 28px; border-bottom: 2px solid #eee; padding-bottom: 10px; margin-top: 0; }
+        h2 { margin-top: 30px; color: #000; font-size: 20px; }
+        p, li { color: #444; margin-bottom: 12px; }
+        ul { padding-left: 20px; }
+        .footer {
+            margin-top: 50px;
+            font-size: 0.9em;
+            color: #666;
+            border-top: 1px solid #eee;
+            padding-top: 25px;
+            text-align: center;
+        }
+        .contact-box {
+            background: #f9f9f9;
+            padding: 15px;
+            border-radius: 8px;
+            display: inline-block;
+            margin-top: 10px;
+        }
         strong { color: #000; }
     </style>
 </head>
 <body>
 
+<div class="container">
     <nav id="top-nav">
         <a id="link-privacy" onclick="showSection('privacy')">Privacy Policy</a>
         <a id="link-terms" onclick="showSection('terms')">Terms of Service</a>
@@ -49,68 +81,99 @@
         <h1>Privacy Policy</h1>
         <p>This Privacy Policy explains how <strong>deming.zdm</strong> ("I," "me," or "my") as an individual developer, handles your information when you use <strong>getdigest</strong> (the "App").</p>
 
-        <h2>1. No Data Collection</h2>
-        <p>I value your privacy. This App does not collect, store, or transmit any personally identifiable information (such as your name, email address, or phone number). All data generated within the App remains on your device.</p>
+        <h2>1. Data Collection</h2>
+        <p>I value your privacy. The App is designed to minimize the collection of personal information:</p>
+        <ul>
+            <li><strong>Authentication Data:</strong> When you sign in via Apple or Google, we collect your unique user identifier and email address to create and manage your account.</li>
+            <li><strong>Usage Data:</strong> All content processed within the App (such as digests) is stored on your device or securely within your private account.</li>
+        </ul>
 
         <h2>2. Third-Party Services</h2>
-        <p>The App integrates with <strong>Supabase</strong> for authentication and <strong>Sign in with Apple</strong>. These services may collect information used to identify you. You can find their respective privacy policies on their official websites.</p>
+        <p>The App integrates the following third-party services for authentication and database management:</p>
+        <ul>
+            <li><strong>Sign in with Apple:</strong> Provided by Apple Inc.</li>
+            <li><strong>Google Sign-In:</strong> Provided by Google LLC.</li>
+            <li><strong>Supabase:</strong> Our backend infrastructure used to securely manage user authentication and data storage.</li>
+        </ul>
+        <p>These services have their own privacy policies which you are encouraged to review.</p>
 
         <h2>3. Data Security</h2>
-        <p>Your data is secured by the iOS operating system's built-in security features. For accounts created via Apple Sign-in, I only store the unique identifier and email provided by Apple to facilitate your access to the App.</p>
+        <p>Your data is protected by industry-standard encryption provided by Supabase and the security features built into the iOS operating system. I do not sell or share your personal data with third-party advertisers.</p>
 
         <h2>4. Children’s Privacy</h2>
-        <p>I do not knowingly collect personal information from children under 13. If you are a parent or guardian and you are aware that your child has provided me with personal information, please contact me so that I can take necessary actions.</p>
+        <p>I do not knowingly collect personal information from children under 13. If you are a parent or guardian and believe your child has provided personal information, please contact me immediately.</p>
 
-        <h2>5. Changes to This Policy</h2>
-        <p>I may update this Privacy Policy from time to time. You are advised to review this page periodically for any changes.</p>
+        <h2>5. Account Deletion</h2>
+        <p>Users have the right to delete their accounts and all associated data at any time through the settings within the App or by contacting me via email.</p>
+
+        <h2>6. Changes to This Policy</h2>
+        <p>I may update this Privacy Policy from time to time. The "Last Updated" date at the bottom reflects the latest changes.</p>
     </section>
 
     <section id="terms">
         <h1>Terms of Service</h1>
-        <p>Welcome to <strong>getdigest</strong>. By using this App, you agree to the following terms.</p>
+        <p>Welcome to <strong>getdigest</strong>. By downloading or using the App, you agree to these terms. Please read them carefully.</p>
 
-        <h2>1. Use License</h2>
-        <p>I, <strong>deming.zdm</strong>, grant you a personal, limited, non-exclusive license to use the App for personal purposes.</p>
+        <h2>1. License to Use</h2>
+        <p>I grant you a personal, non-exclusive, non-transferable, limited license to use <strong>getdigest</strong> for personal and non-commercial purposes on your mobile device.</p>
 
-        <h2>2. User Conduct</h2>
-        <p>You agree not to modify, reverse engineer, or use the App for any unauthorized or illegal activities.</p>
+        <h2>2. User Responsibilities</h2>
+        <p>You agree not to:</p>
+        <ul>
+            <li>Decompile, reverse engineer, or attempt to extract the source code of the App.</li>
+            <li>Use the App for any illegal or unauthorized purposes.</li>
+            <li>Abuse the authentication systems (Apple/Google).</li>
+        </ul>
 
-        <h2>3. Disclaimer</h2>
-        <p>The App is provided "as is" without warranties of any kind. I am not liable for any damages or data loss resulting from your use of the App.</p>
+        <h2>3. Third-Party Accounts</h2>
+        <p>You are responsible for maintaining the security of your Apple or Google account used to access getdigest. I cannot be held liable for any loss or damage from your failure to comply with this security obligation.</p>
 
-        <h2>4. Termination</h2>
-        <p>I reserve the right to terminate or suspend access to the App for users who violate these terms.</p>
+        <h2>4. Disclaimer of Warranties</h2>
+        <p>The App is provided "as is" and "as available" without any warranties. I do not guarantee that the App will always be error-free or uninterrupted.</p>
+
+        <h2>5. Limitation of Liability</h2>
+        <p>In no event shall <strong>deming.zdm</strong> be liable for any indirect, incidental, or consequential damages arising out of your use or inability to use the App.</p>
     </section>
 
     <div class="footer">
-        <p><strong>Contact & Support:</strong> suinia.zdm@gmail.com</p>
-        <p>Last Updated: January 13, 2026</p>
+        <div class="contact-box">
+            <strong>Contact & Support:</strong><br>
+            Email: <a href="mailto:suinia.zdm@gmail.com">suinia.zdm@gmail.com</a>
+        </div>
+        <p style="margin-top: 20px;">Last Updated: January 13, 2026</p>
+        <p>&copy; 2026 deming.zdm. All rights reserved.</p>
     </div>
+</div>
 
-    <script>
-        function showSection(id) {
-            // 切换内容显示
-            document.querySelectorAll('section').forEach(s => s.classList.remove('active'));
-            const targetSection = document.getElementById(id);
-            if (targetSection) targetSection.classList.add('active');
+<script>
+    function showSection(id) {
+        // 1. 隐藏所有内容块
+        document.querySelectorAll('section').forEach(s => s.classList.remove('active'));
+        // 2. 显示选中的内容块
+        const targetSection = document.getElementById(id);
+        if (targetSection) targetSection.classList.add('active');
 
-            // 切换导航样式
-            document.querySelectorAll('nav a').forEach(a => a.classList.remove('active'));
-            const targetLink = document.getElementById('link-' + id);
-            if (targetLink) targetLink.classList.add('active');
+        // 3. 更新导航栏高亮
+        document.querySelectorAll('nav a').forEach(a => a.classList.remove('active'));
+        const targetLink = document.getElementById('link-' + id);
+        if (targetLink) targetLink.classList.add('active');
+        
+        // 4. 平滑滚动到顶部
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    // 页面加载时根据 URL 参数判断显示哪个标签
+    window.onload = function() {
+        const urlParams = new URLSearchParams(window.location.search);
+        const tab = urlParams.get('tab');
+        
+        if (tab === 'terms') {
+            showSection('terms');
+        } else {
+            showSection('privacy'); // 默认显示隐私政策
         }
-
-        // 页面加载时检查 URL 参数
-        window.onload = function() {
-            const urlParams = new URLSearchParams(window.location.search);
-            const tab = urlParams.get('tab');
-            if (tab === 'terms') {
-                showSection('terms');
-            } else {
-                showSection('privacy');
-            }
-        }
-    </script>
+    }
+</script>
 
 </body>
 </html>
